@@ -59,22 +59,30 @@ function getMovie() {
 }
 
 function putMovie() {
-  /* Task 3.3. 
-    - Get the movie data using getMovie()
-    - Configure the XMLHttpRequest to make a PUT to /movies/:imdbID
-    - Set the 'Content-Type' appropriately for JSON data
-    - Configure the function below as the onload event handler
-    - Send the movie data as JSON
-  */
 
-  const xhr = new XMLHttpRequest();
+  
+  const movie = getMovie()
+
+  //  Request erstellen
+  const xhr = new XMLHttpRequest()
+
+  xhr.open('PUT', '/movies/' + movie.imdbID)
+
+  //  JSON Header setzen
+  xhr.setRequestHeader('Content-Type', 'application/json')
+
+  //  Antwort behandeln
   xhr.onload = function () {
-    if (xhr.status == 200 || xhr.status === 204) {
-      location.href = "index.html";
+    if (xhr.status == 200 || xhr.status == 201) {
+      
+      location.href = "index.html"
     } else {
-      alert("Saving of movie data failed. Status code was " + xhr.status);
+      alert("Fehler beim Speichern: " + xhr.status)
     }
-  };
+  }
+
+  //  Daten senden
+  xhr.send(JSON.stringify(movie))
 }
 
 /** Loading and setting the movie data for the movie with the passed imdbID */

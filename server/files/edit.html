@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Movie</title>
+
+  <!--Basis Styling + Formular Styling -->
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="edit.css">
+</head>
+
+<body>
+
+  <h1>Edit Movie</h1>
+
+  <!-- Formular für einen Film -->
+  <form>
+
+    <!--  imdbID versteckt (nicht editierbar) -->
+    <input type="hidden" id="imdbID">
+
+    <!-- Titel -->
+    <div>
+      <label for="Title">Title</label>
+      <input id="Title" required>
+    </div>
+
+    <!-- Veröffentlichungsdatum -->
+    <div>
+      <label for="Released">Released</label>
+      <input id="Released" type="date" required>
+    </div>
+
+    <!-- Laufzeit -->
+    <div>
+      <label for="Runtime">Runtime</label>
+      <input id="Runtime" type="number" required>
+    </div>
+
+    <!-- Genres (Mehrfachauswahl möglich) -->
+    <div>
+      <label for="Genres">Genres</label>
+      <select id="Genres" multiple required>
+        <option>Action</option>
+        <option>Adventure</option>
+        <option>Comedy</option>
+        <option>Drama</option>
+        <option>Fantasy</option>
+        <option>Crime</option>
+        <option>Biography</option>
+      </select>
+    </div>
+
+    <!-- Regisseure -->
+    <div>
+      <label for="Directors">Directors</label>
+      <input id="Directors" required>
+    </div>
+
+    <!-- Autoren -->
+    <div>
+      <label for="Writers">Writers</label>
+      <input id="Writers" required>
+    </div>
+
+    <!-- Schauspieler -->
+    <div>
+      <label for="Actors">Actors</label>
+      <input id="Actors" required>
+    </div>
+
+    <!-- Beschreibung -->
+    <div>
+      <label for="Plot">Plot</label>
+      <textarea id="Plot" rows="5" required></textarea>
+    </div>
+
+    <!-- Poster URL -->
+    <div>
+      <label for="Poster">Poster URL</label>
+      <input id="Poster" required>
+    </div>
+
+    <!-- Metascore -->
+    <div>
+      <label for="Metascore">Metascore</label>
+      <input id="Metascore" type="number" required>
+    </div>
+
+    <!-- IMDb Rating -->
+    <div>
+      <label for="imdbRating">IMDb Rating</label>
+      <input id="imdbRating" type="number" step="0.1" required>
+    </div>
+
+    <!-- Save Button -->
+    <!-- type="button" verhindert automatisches Form Submit -->
+    <button type="button" onclick="putMovie()">Save</button>
+
+    <!-- Cancel → zurück zur Übersicht -->
+    <button type="button" onclick="location.href='index.html'">Cancel</button>
+
+  </form>
+
+  <!-- JavaScript für Daten laden & speichern -->
+  <script src="edit.js"></script>
+
+</body>
+</html>

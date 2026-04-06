@@ -1,41 +1,39 @@
 @import url(base.css);
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
+body {
+    font-family: 'Calibri';
+    background-color: #f0f0f0;
+    padding: 20px;
 }
 
 img {
-  border-radius: 12px;
+    border-radius: 8px;
+    max-width: 200px;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 18px;
 }
 
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 2vw;
+    background-color: white;
+    border-radius: 12px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
-span {
-  margin-right: 4px;
-}
-
-.genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-}
-
-select {
-  width: 100%;
-}
-
-textarea {
-  width: 100%;
+span.genre {
+    background-color:#e7f1ff;
+    color: #1d4ed8;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-right: 6px;
+    font-size: 15px;
+    font-weight: bold;
 }
